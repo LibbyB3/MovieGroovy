@@ -3,37 +3,37 @@ using MovieAppCSC660.Models;
 
 namespace Forms
 {
-    public partial class createMovForm : Form
+    public partial class createUserForm : Form
     {
-        public createMovForm()
+        public createUserForm()
         {
             InitializeComponent();
         }
-        private void createMVButton_Click(object sender, EventArgs e)
+        private void createUserButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
                 TitleModel model = new TitleModel(
-                    titleTextBox.Text);  //TODO - redo the constructors on each model and match them 
+                    usernameTextBox.Text);  //TODO - redo the constructors on each model and match them 
                 PrimaryDirectorModel modelPD = new PrimaryDirectorModel(
-                    primDirectTextBox.Text);
+                    passwordTextBox.Text);
                 GenreModel modelG = new GenreModel
                     (genreTextBox.Text);
                 SynopsisModel modelS = new SynopsisModel
                     (synopsisTextBox.Text);
-                ReleaseYearModel modelY = new ReleaseYearModel(yearTextBox.Text);
+                ReleaseYearModel modelY = new ReleaseYearModel(emailTextBox.Text);
                 //I have to create separate things here bc I have multiple models w/info on this form
 
                 //also have to make multiple connections here for the multiple models
                 //globalconfig saves the models back to the DB
                 GlobalConfig.Connection.CreateTitle(model); //have to have multiples models here
-                titleTextBox.Text = "";
+                usernameTextBox.Text = "";
 
                 GlobalConfig.Connection.CreateYear(modelY);
-                yearTextBox.Text = "0";
+                emailTextBox.Text = "0";
 
                 GlobalConfig.Connection.CreatePrimaryDirector(modelPD);
-                primDirectTextBox.Text = "";
+                passwordTextBox.Text = "";
                 //use split code to put last name in here as well
 
                 GlobalConfig.Connection.CreateGenre(modelG);
@@ -53,7 +53,7 @@ namespace Forms
         {
             // TODO - figure out what the heck I need to write here for the tryparse (spot 39:09 in video)
             bool output = true; 
-            if(int.TryParse(yearTextBox.Text, out int year)== false) //converting from string to int
+            if(int.TryParse(emailTextBox.Text, out int year)== false) //converting from string to int
             {
                 output = false;
             }
@@ -61,11 +61,11 @@ namespace Forms
             { 
                 output = false; 
             }
-            if(titleTextBox.Text.Length == 0) //this and all validations following say that if there is no input in
+            if(usernameTextBox.Text.Length == 0) //this and all validations following say that if there is no input in
             {                                  // the text box, then the validation fails
                 output = false;
             }
-            if(primDirectTextBox.Text.Length == 0)
+            if(passwordTextBox.Text.Length == 0)
             {
                 output = false;
             }

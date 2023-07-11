@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.landPgTitleLab = new System.Windows.Forms.Label();
-            this.LandPgCreateMVButton = new System.Windows.Forms.Button();
-            this.LandPgSearchMVButton = new System.Windows.Forms.Button();
+            this.LandPgCreateUserButton = new System.Windows.Forms.Button();
+            this.LandPgLoginButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // landPgTitleLab
@@ -44,31 +44,31 @@
             this.landPgTitleLab.TabIndex = 0;
             this.landPgTitleLab.Text = "MOVIE GROOVY";
             // 
-            // LandPgCreateMVButton
+            // LandPgCreateUserButton
             // 
-            this.LandPgCreateMVButton.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.LandPgCreateMVButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.LandPgCreateMVButton.ForeColor = System.Drawing.Color.White;
-            this.LandPgCreateMVButton.Location = new System.Drawing.Point(103, 194);
-            this.LandPgCreateMVButton.Name = "LandPgCreateMVButton";
-            this.LandPgCreateMVButton.Size = new System.Drawing.Size(181, 98);
-            this.LandPgCreateMVButton.TabIndex = 29;
-            this.LandPgCreateMVButton.Text = "Create Movie";
-            this.LandPgCreateMVButton.UseVisualStyleBackColor = false;
-            this.LandPgCreateMVButton.Click += new System.EventHandler(this.LandPgCreateMVButton_Click);
+            this.LandPgCreateUserButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.LandPgCreateUserButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.LandPgCreateUserButton.ForeColor = System.Drawing.Color.White;
+            this.LandPgCreateUserButton.Location = new System.Drawing.Point(103, 194);
+            this.LandPgCreateUserButton.Name = "LandPgCreateUserButton";
+            this.LandPgCreateUserButton.Size = new System.Drawing.Size(181, 98);
+            this.LandPgCreateUserButton.TabIndex = 29;
+            this.LandPgCreateUserButton.Text = "Create User";
+            this.LandPgCreateUserButton.UseVisualStyleBackColor = false;
+            this.LandPgCreateUserButton.Click += new System.EventHandler(this.LandPgCreateMVButton_Click);
             // 
-            // LandPgSearchMVButton
+            // LandPgLoginButton
             // 
-            this.LandPgSearchMVButton.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.LandPgSearchMVButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.LandPgSearchMVButton.ForeColor = System.Drawing.Color.White;
-            this.LandPgSearchMVButton.Location = new System.Drawing.Point(511, 194);
-            this.LandPgSearchMVButton.Name = "LandPgSearchMVButton";
-            this.LandPgSearchMVButton.Size = new System.Drawing.Size(178, 98);
-            this.LandPgSearchMVButton.TabIndex = 30;
-            this.LandPgSearchMVButton.Text = "Search Movie";
-            this.LandPgSearchMVButton.UseVisualStyleBackColor = false;
-            this.LandPgSearchMVButton.Click += new System.EventHandler(this.LandPgSearchMVButton_Click);
+            this.LandPgLoginButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.LandPgLoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.LandPgLoginButton.ForeColor = System.Drawing.Color.White;
+            this.LandPgLoginButton.Location = new System.Drawing.Point(511, 194);
+            this.LandPgLoginButton.Name = "LandPgLoginButton";
+            this.LandPgLoginButton.Size = new System.Drawing.Size(178, 98);
+            this.LandPgLoginButton.TabIndex = 30;
+            this.LandPgLoginButton.Text = "Login";
+            this.LandPgLoginButton.UseVisualStyleBackColor = false;
+            this.LandPgLoginButton.Click += new System.EventHandler(this.LandPgSearchMVButton_Click);
             // 
             // LandingPage
             // 
@@ -76,8 +76,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LandPgSearchMVButton);
-            this.Controls.Add(this.LandPgCreateMVButton);
+            this.Controls.Add(this.LandPgLoginButton);
+            this.Controls.Add(this.LandPgCreateUserButton);
             this.Controls.Add(this.landPgTitleLab);
             this.Name = "LandingPage";
             this.ResumeLayout(false);
@@ -88,7 +88,7 @@
         #endregion
 
         private Label landPgTitleLab;
-        private Button LandPgCreateMVButton;
-        private Button LandPgSearchMVButton;
+        private Button LandPgCreateUserButton;
+        private Button LandPgLoginButton;
     }
 }

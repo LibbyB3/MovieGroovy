@@ -31,7 +31,7 @@ namespace Forms
             //GlobalConfig.Connection.CreateMovie(cm);
             //Application.Run(new createMovForm());
             
-            createMovForm frm = new createMovForm();
+            createUserForm frm = new createUserForm();
             frm.Show();
             //this.Close();
         }
