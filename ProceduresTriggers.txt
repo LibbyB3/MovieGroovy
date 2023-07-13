@@ -50,6 +50,12 @@ AS
 BEGIN
     INSERT INTO Reviews (UserID, MovieID, ReviewText, Rating, Timestamp)
 VALUES (1, 1, 'Great movie!', 5, GETDATE());
+EXEC InsertReview
+    @UserID = 1,
+    @MovieID = 1,
+    @ReviewText = 'Great movie!',
+    @Rating = 5,
+    @Timestamp = GETDATE();
 
 END
 
