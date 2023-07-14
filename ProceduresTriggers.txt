@@ -1,0 +1,84 @@
+use Movie_Groovy_625
+go
+-- Creates a stored procedure code that retrieves all movies directed by a given director:
+CREATE or ALTER PROCEDURE GetMoviesByDirector
+    @DirectorName VARCHAR(255)
+AS
+BEGIN
+    SELECT Movies.Title, Movies.ReleaseDate, Movies.Duration, Genres.GenreName
+    FROM Movies
+    INNER JOIN Directors ON Movies.DirectorID = Directors.DirectorID
+    INNER JOIN Genres ON Movies.GenreID = Genres.GenreID
+    WHERE Directors.Name = @DirectorName;
+END
+--Example of executed stored procedure
+EXEC GetMoviesByDirector 'Christopher Nolan';
+
+--creates a stored procedure that retrieves actors based on the given birthdate
+CREATE PROCEDURE GetActorsBornAfterDate
+    @BirthDate DATE
+AS
+BEGIN
+    SELECT Name, DateOfBirth, Nationality
+    FROM Actors
+    WHERE DateOfBirth > @BirthDate;
+END
+EXEC GetActorsBornAfterDate '1970-01-01';
+
+Go
+-- Create a stored procedure to insert a new user
+CREATE or ALTER PROCEDURE InsertUser
+    @Username VARCHAR(255),
+    @Email VARCHAR(255),
+    @Password VARCHAR(255)
+AS
+BEGIN
+    INSERT INTO Users (Username, Email, Password)
+    VALUES (@Username, @Email, @Password);
+END
+--Example
+EXEC InsertUser 'john_doe', 'john@example.com', 'password123';
+
+GO
+-- Create a stored procedure to insert a new review
+CREATE Or ALTER PROCEDURE InsertReview
+    @UserID INT,
+    @MovieID INT,
+    @ReviewText VARCHAR(MAX),
+    @Rating INT
+AS
+BEGIN
+    INSERT INTO Reviews (UserID, MovieID, ReviewText, Rating, Timestamp)
+VALUES (1, 1, 'Great movie!', 5, GETDATE());
+EXEC InsertReview
+    @UserID = 1,
+    @MovieID = 1,
+    @ReviewText = 'Great movie!',
+    @Rating = 5,
+    @Timestamp = GETDATE();
+
+END
+
+GO
+-- Create a trigger to insert a timestamp when a new review is added
+CREATE TRIGGER InsertReviewTimestamp
+ON Reviews
+AFTER INSERT
+AS
+BEGIN
+    UPDATE Reviews
+    SET Timestamp = GETDATE()
+    FROM inserted
+    WHERE Reviews.ReviewID = inserted.ReviewID;
+END;
+--Create a trigger to insert a timestamp when a new user is created
+GO
+CREATE TRIGGER UpdateUserCreationTimestamp
+ON Users
+AFTER INSERT
+AS
+BEGIN
+    UPDATE Users
+    SET CreationTimestamp = GETDATE()
+    WHERE UserID IN (SELECT UserID FROM inserted);
+END
