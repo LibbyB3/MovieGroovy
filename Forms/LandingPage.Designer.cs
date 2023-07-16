@@ -55,7 +55,7 @@
             this.LandPgCreateUserButton.TabIndex = 29;
             this.LandPgCreateUserButton.Text = "Create User";
             this.LandPgCreateUserButton.UseVisualStyleBackColor = false;
-            this.LandPgCreateUserButton.Click += new System.EventHandler(this.LandPgCreateMVButton_Click);
+            this.LandPgCreateUserButton.Click += new System.EventHandler(this.LandingPageCreateUserButton_Click);
             // 
             // LandPgLoginButton
             // 
@@ -68,7 +68,7 @@
             this.LandPgLoginButton.TabIndex = 30;
             this.LandPgLoginButton.Text = "Login";
             this.LandPgLoginButton.UseVisualStyleBackColor = false;
-            this.LandPgLoginButton.Click += new System.EventHandler(this.LandPgSearchMVButton_Click);
+            this.LandPgLoginButton.Click += new System.EventHandler(this.LandingPageLoginButton_Click);
             // 
             // LandingPage
             // 

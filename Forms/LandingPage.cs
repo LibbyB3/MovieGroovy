@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,19 +19,16 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void LandPgSearchMVButton_Click(object sender, EventArgs e)
+        private void LandingPageLoginButton_Click(object sender, EventArgs e)
         {
-            SearchMovieForm frm = new SearchMovieForm();
+            loginForm frm = new loginForm();
             frm.Show();
             //this.Close();
 
         }
 
-        private void LandPgCreateMVButton_Click(object sender, EventArgs e)
+        private void LandingPageCreateUserButton_Click(object sender, EventArgs e)
         {
-            //GlobalConfig.Connection.CreateMovie(cm);
-            //Application.Run(new createMovForm());
-            
             createUserForm frm = new createUserForm();
             frm.Show();
             //this.Close();
