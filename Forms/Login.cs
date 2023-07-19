@@ -28,8 +28,8 @@ namespace Forms
                 string username = usernameTextBox.Text; //= "";
                 string password = passwordTextBox.Text; //= "";
 
-                SqlConnection con = new SqlConnection("Server=BOOK-T9BLIKLMOS\\CSCDATABASE;Database=Movie_Groovy_625;Trusted_Connection=True;");
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Count(*) From Users where Username=@Username AND Password=@Password", con);
+                //SqlConnection con = new SqlConnection("Server=BOOK-T9BLIKLMOS\\CSCDATABASE;Database=Movie_Groovy_625;Trusted_Connection=True;");
+                //SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Count(*) From Users where Username=@Username AND Password=@Password", con);
                 //SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select Count(*) From Login where Username='" + usernameTextBox.Text + "' and Password='" + passwordTextBox.Text + "'");
                 SearchMovieForm frm = new SearchMovieForm();
                 frm.Show();
