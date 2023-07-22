@@ -36,6 +36,7 @@
             this.moviesDataGridView = new System.Windows.Forms.DataGridView();
             this.totalMoviesLabel = new System.Windows.Forms.Label();
             this.allMoviesButton = new System.Windows.Forms.Button();
+            this.newMovieButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.moviesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,12 +115,26 @@
             this.allMoviesButton.UseVisualStyleBackColor = false;
             this.allMoviesButton.Click += new System.EventHandler(this.allMoviesButton_Click);
             // 
+            // newMovieButton
+            // 
+            this.newMovieButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.newMovieButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.newMovieButton.ForeColor = System.Drawing.Color.White;
+            this.newMovieButton.Location = new System.Drawing.Point(484, 489);
+            this.newMovieButton.Name = "newMovieButton";
+            this.newMovieButton.Size = new System.Drawing.Size(112, 37);
+            this.newMovieButton.TabIndex = 33;
+            this.newMovieButton.Text = "New Movie";
+            this.newMovieButton.UseVisualStyleBackColor = false;
+            this.newMovieButton.Click += new System.EventHandler(this.newMovieButton_Click);
+            // 
             // SearchMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(671, 549);
+            this.Controls.Add(this.newMovieButton);
             this.Controls.Add(this.allMoviesButton);
             this.Controls.Add(this.totalMoviesLabel);
             this.Controls.Add(this.moviesDataGridView);
@@ -142,5 +157,6 @@
         private DataGridView moviesDataGridView;
         private Label totalMoviesLabel;
         private Button allMoviesButton;
+        private Button newMovieButton;
     }
 }

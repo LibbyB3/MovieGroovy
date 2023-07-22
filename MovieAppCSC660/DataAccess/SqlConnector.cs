@@ -30,5 +30,19 @@ namespace AppLibrary.DataAccess
                 return model;
             }
         }
+        public MoviesModel CreateMovie(MoviesModel movie)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("MovieAppCSC660")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Title", movie.Title);
+                p.Add("@ReleaseDate", movie.ReleaseDate);
+                p.Add("@Duration", movie.Duration);
+
+                connection.Execute("InsertMovie", p, commandType: CommandType.StoredProcedure);
+
+                return movie;
+            }
+        }
     }
 }

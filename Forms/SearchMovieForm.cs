@@ -97,5 +97,11 @@ namespace Forms
                 }
             }
         }
+
+        private void newMovieButton_Click(object sender, EventArgs e)
+        {
+            createMovieForm frm = new createMovieForm();
+            frm.Show();
+        }
     }
 }

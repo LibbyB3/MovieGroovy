@@ -20,13 +20,7 @@ namespace AppLibrary.DataAccess
         /// <returns> as of right now it does not return anything</returns>
         UsersModel CreateUser(UsersModel user);
         
-        ///// all of the following lists are used to populate the dropdowns on the search movie form
-        ///// </summary>
-        ///// <returns></returns>
-        //List<TitleModel> GetAllTitles();
-        //List<ReleaseYearModel> GetAllYears();
-        //List<PrimaryDirectorModel> GetAllDirectors();
-        //List<GenreModel> GetAllGenres();
+        MoviesModel CreateMovie(MoviesModel movie);
 
     }
 }
